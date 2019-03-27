@@ -1,23 +1,23 @@
-node {
-    def app
-    
-    stage('Clone repository') {
-        /* Cloning the Repository to our Workspace */
+#!groovy
 
-        checkout scm
-    }
-
-    stage('Build image') {
-        /* This builds the actual image */
-
-        app = docker.build("ev3dev/debian-jessie-cross:ev3cc")
-    }
-
-    stage('Test image') {
-        
-        app.inside {
-            echo "Tests passed"
+pipeline {
+  agent none
+  stages {
+    stage('ev3dev image') {
+      agent {
+        docker {
+          image 'ev3dev/debian-jessie-cross:latest'
         }
+      }
+      #steps {
+      #  sh 'ls'
+      #}
     }
-
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build -t ev3cc .'
+      }
+    }
+  }
 }
