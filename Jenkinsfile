@@ -5,7 +5,7 @@ pipeline {
   agent {   
       dockerfile {
         filename 'Dockerfile'
-        label 'ev3cc'
+        args '-t ev3cc'
         }
   }
   
