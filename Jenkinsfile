@@ -9,9 +9,7 @@ pipeline {
           image 'ev3dev/debian-jessie-cross:latest'
         }
       }
-      #steps {
-      #  sh 'ls'
-      #}
+
     }
     stage('Docker Build') {
       agent any
