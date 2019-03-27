@@ -6,7 +6,9 @@ pipeline {
   stages{
     stage('Test') {
             steps {
-                sh 'ls'
+                sh 'docker build -t ev3cc ev3dev/debian-jessie-cross'
+              
+               
             }
     }
   
