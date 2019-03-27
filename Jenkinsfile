@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("ev3cc")
+        app = docker.build("ev3dev/debian-jessie-cross:ev3cc")
     }
 
     stage('Test image') {
