@@ -8,7 +8,7 @@ pipeline {
           docker {
           image 'ev3dev/debian-jessie-cross:latest'
           }
-     }
+      }
   }
     
   stage('Docker Build') {
@@ -17,5 +17,5 @@ pipeline {
         sh 'docker build -t ev3cc .'
       }
     }
-  }
+  
 }
