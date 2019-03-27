@@ -2,20 +2,22 @@
 
 pipeline {
   agent none
-  
-  stage('ev3dev image') {
+  stages {
+    stage('docker image') {
       agent {
-          docker {
+        docker {
           image 'ev3dev/debian-jessie-cross:latest'
-          }
+        }
       }
-  }
-    
-  stage('Docker Build') {
+      steps {
+        sh 'ls'
+      }
+    }
+    stage('Docker Build') {
       agent any
       steps {
         sh 'docker build -t ev3cc .'
       }
     }
-  
+  }
 }
