@@ -4,11 +4,7 @@ pipeline {
   agent none
   stages {
     stage('docker image') {
-      agent {
-        docker {
-          image 'ev3dev/debian-jessie-cross:latest'
-        }
-      }
+      agent {   dockerfile true }
       steps {
         sh 'ls'
       }
