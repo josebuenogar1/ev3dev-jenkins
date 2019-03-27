@@ -2,13 +2,17 @@
 
 pipeline {
   
-  agent  {   dockerfile true }
+  agent {   
+      dockerfile {
+        filename 'Dockerfile'
+        label 'ev3cc'
+        }
+  }
+  
   stages{
     stage('Test') {
             steps {
-                sh 'docker build -t ev3cc ev3dev/debian-jessie-cross'
-              
-               
+                sh 'ls'    
             }
     }
   
