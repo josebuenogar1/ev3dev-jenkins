@@ -8,9 +8,16 @@ node {
     }
 
     stage('Build image') {
-        /* This builds the actual image */
+        /* This builds the actual image  build("this is the tag image")*/
 
         app = docker.build("ev3cc")
+    }
+    
+    stage('copy exe'){
+    
+        app.withRun{
+            sh './hello'        
+        }
     }
 
 
