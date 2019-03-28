@@ -2,9 +2,11 @@ node {
 
     checkout scm
 
-    def app = docker.build("ev3cc")
+    def image = docker.build("ev3cc")
     
-    sh app.id
+    def container = image.run()  
+    
+    container.stop()
 
     
     
