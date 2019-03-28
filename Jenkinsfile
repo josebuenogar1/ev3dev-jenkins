@@ -6,7 +6,7 @@ node {
     
     def container = image.run()
     
-    sh 'ls'
+    sh "echo ${image.imageName()}"
     
     
     
