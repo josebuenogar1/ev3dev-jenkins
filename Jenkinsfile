@@ -4,12 +4,11 @@ node {
 
     def app = docker.build("ev3cc")
     
-    app.withRun{
+    app.inside(){
         sh 'pwd'
-        sh 'ls'
-        
-        
+        sh 'ls'  
     }
+    
 
 }
 
