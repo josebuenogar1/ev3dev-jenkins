@@ -13,11 +13,6 @@ node {
         app = docker.build("ev3cc")
     }
     
-    stage('test'){
-        app.inside{
-        sh 'ls'
-        }
-    }
     
 
 }
