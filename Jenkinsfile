@@ -6,7 +6,8 @@ node {
     
     app.withRun{
         sh 'pwd'
-        sh 'ls'  
+        sh 'ls'
+        sh 'touch file'
     }
     
 
