@@ -13,7 +13,7 @@ node {
     container.stop()*/
     
     docker.image(myImage.id).withRun{
-    sh "ls"
+    sh "pwd"
     }
 
     
