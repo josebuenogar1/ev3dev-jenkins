@@ -2,9 +2,12 @@ node {
 
     checkout scm
 
-    def app = docker.build("ev3cc")
+    def app = docker.build("ev3cc").inside{
+    sh 'pwd'
+    sh 'ls'   
+
+    }
     
-   def container = app.withRun{}
     
 
 }
