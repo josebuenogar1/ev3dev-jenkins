@@ -16,8 +16,8 @@ node {
     stage('test'){
     
         app.withRun('-v /home/ubuntu/prog:/src '){
-            dir('/src') {
-                    sh 'pwd'
+            dir("/src") {
+                    sh "pwd"
               
             }
             
