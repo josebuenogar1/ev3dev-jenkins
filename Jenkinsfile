@@ -12,7 +12,7 @@ node {
     
     container.stop()*/
     
-    docker.image(${myImage}).withRun{
+    docker.image(myImage).withRun{
     sh "ls"
     }
 
