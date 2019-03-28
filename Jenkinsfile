@@ -4,7 +4,7 @@ node {
 
     def app = docker.build("ev3cc")
     
-    docker.image("ev3cc").inside{
+    app.inside{
     sh 'ls'
     }
 
