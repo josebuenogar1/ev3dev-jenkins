@@ -1,5 +1,5 @@
 pipeline {
-    agent{ docker {Dokerfile true} }
+    agent{ docker {dokerfile true} }
     
     stages{
         stage('Clone repository') {
