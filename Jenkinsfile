@@ -11,7 +11,9 @@ node {
         /* This builds the actual image  build("this is the tag image")*/
 
         app = docker.build("ev3cc")
-        sh 'echo ${app.id}'
+        app.inside{
+        sh 'pwd'
+        }
 
        
         
