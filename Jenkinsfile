@@ -1,4 +1,4 @@
-pipeline {
+node {
     def app
 
     stage('Clone repository') {
@@ -17,11 +17,10 @@ pipeline {
     stage('test'){
     
         app.withRun('-v /home/ubuntu/prog:/src '){
-            dir('/src'){
-                sh 'pwd'
-
-            
-            }
+                sh """
+                  cd /src
+                  pwd 
+                """
             
         }
     }
