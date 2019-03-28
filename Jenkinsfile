@@ -16,7 +16,7 @@ node {
     stage('test'){
     
         app.withRun{
-            sh 'sudo cd /src'
+            sh 'pwd && ls'
         }
     }
 
