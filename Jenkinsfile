@@ -2,15 +2,19 @@ node {
 
     checkout scm
 
-    def image = docker.build("ev3cc")
+    def myImage = docker.build("ev3cc")
     
-    def container = image.run()
+    /*def container = image.run()
     
     sh "echo ${image.imageName()}"
     
     
     
-    container.stop()
+    container.stop()*/
+    
+    docker.image(${myImage}).withRun{
+    sh "ls"
+    }
 
     
     
