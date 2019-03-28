@@ -1,25 +1,12 @@
 node {
-    def app
-    def cont
 
-    stage('Clone repository') {
-        /* Cloning the Repository to our Workspace */
+    checkout scm
 
-        checkout scm
-    }
-
-    stage('Build image') {
-        /* This builds the actual image  build("this is the tag image")*/
-
-        app = docker.build("ev3cc")
+    def app = docker.build("ev3cc")
         
-        app.inside {
+    app.inside {
         sh 'pwd'
-        }
-
     }
-    
-  
 
 }
 
