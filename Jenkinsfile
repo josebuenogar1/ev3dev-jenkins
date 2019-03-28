@@ -11,13 +11,16 @@ node {
         /* This builds the actual image  build("this is the tag image")*/
 
         app = docker.build("ev3cc")
+        reuseNode true
     }
     
     stage('test'){
     
         app.withRun('-v /home/ubuntu/prog:/src '){
         
-                sh "cd /src && pwd"
+                sh 'pwd'
+                sh 'cd /src'
+                sh 'pwd
             
         }
     }
