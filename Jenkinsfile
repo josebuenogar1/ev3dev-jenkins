@@ -20,7 +20,7 @@ node {
         
                 sh 'pwd'
                 sh 'cd /src'
-                sh 'pwd
+                sh 'pwd'
             
         }
     }
