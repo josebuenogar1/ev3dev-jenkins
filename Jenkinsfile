@@ -16,7 +16,9 @@ node {
     stage('test'){
     
         app.withRun{
-            sh 'pwd'        
+            sh 'cd /src'
+            sh 'pwd'
+            sh './hello'
         }
     }
 
