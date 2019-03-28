@@ -1,9 +1,7 @@
 pipeline {
     checkout scm
-    def testImage = docker.build("test-image", "./dockerfiles/test") 
+    def testImage = docker.build("ev3dev", "/home/ubuntu/prog") 
 
-    testImage.inside {
-        sh 'make test'
-    }
+
 }
 
