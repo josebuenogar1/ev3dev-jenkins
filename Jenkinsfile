@@ -13,12 +13,6 @@ node {
         app = docker.build("ev3cc")
     }
 
-    stage('Test image') {
-
-        app.inside {
-            echo "Tests passed"
-        }
-    }
 
 }
 
