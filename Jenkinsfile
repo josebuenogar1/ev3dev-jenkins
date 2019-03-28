@@ -7,7 +7,7 @@ node {
     app.withRun{
         sh 'pwd'
         sh 'ls'
-        sh 'touch file'
+        sh 'arm-linux-gnueabi-gcc -o hello hello.c'
     }
     
 
