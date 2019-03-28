@@ -13,10 +13,10 @@ node {
         app = docker.build("ev3cc")
     }
     
-    stage('copy exe'){
+    stage('test'){
     
         app.withRun{
-            sh './hello'        
+            sh './src/hello'        
         }
     }
 
