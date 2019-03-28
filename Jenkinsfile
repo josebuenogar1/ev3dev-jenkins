@@ -6,6 +6,7 @@ node {
     
     app.inside{
     sh 'ls'
+    sleep 10
     }
 
 }
