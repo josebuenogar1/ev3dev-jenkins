@@ -11,17 +11,15 @@ node {
         /* This builds the actual image  build("this is the tag image")*/
 
         app = docker.build("ev3cc")
-    }
-    
-    stage('test'){
-    
         app.inside{
-        
             stage('checar directorio'){
                 sh 'pwd'
             }
         }
-    }    
+        
+    }
+    
+  
 
 }
 
