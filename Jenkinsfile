@@ -4,11 +4,7 @@ node {
 
     def app = docker.build("ev3cc")
     
-    app.withRun{
-        sh 'pwd'
-        sh 'ls'
-        sh 'arm-linux-gnueabi-gcc -o hello hello.c'
-    }
+   def container = app.withRun{}
     
 
 }
