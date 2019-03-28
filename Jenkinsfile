@@ -18,7 +18,7 @@ node {
         app.withRun('-v /home/ubuntu/prog:/src '){
             dir('/src') {
                     sh 'pwd'
-                    sh 'ls'
+              
             }
             
         }
