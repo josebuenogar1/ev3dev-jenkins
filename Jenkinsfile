@@ -11,7 +11,7 @@ node {
         /* This builds the actual image  build("this is the tag image")*/
 
         app = docker.build("ev3cc")
-        sh 'app.id'
+        sh 'echo ${app.id}'
 
        
         
