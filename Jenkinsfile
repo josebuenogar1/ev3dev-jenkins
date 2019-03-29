@@ -8,9 +8,9 @@ node {
     
     sh "echo ${container.id}"
     
+    container.stop()
     
-    
-    /*container.stop()*/
+    SH "docker cp ${container.id}:/src/hello ."
     
   
 
