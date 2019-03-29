@@ -10,7 +10,7 @@ node {
     
     container.stop()
     
-    SH "docker cp ${container.id}:/src/hello ."
+    SH "docker cp ${container.id}:/src/hello prog/"
     
   
 
