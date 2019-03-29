@@ -6,7 +6,7 @@ node {
     
     def container = myImage.run()
     
-    sh "echo ${myImage.imageName()}"
+    sh "echo ${container.id}"
     
     
     
