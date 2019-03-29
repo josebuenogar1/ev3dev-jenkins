@@ -7,13 +7,11 @@ node {
     def container = myImage.run()
     
     sh "echo ${container.id}"
+
+    sh "docker cp ${container.id}:/src/hello prog/"
     
     
-    
-    SH "docker cp ${container.id}:/src/hello prog/"
-    
-    
-    container.stop()
+    /*container.stop()*/
     
   
 
