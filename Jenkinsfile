@@ -12,7 +12,7 @@ node {
     
     container.stop()*/
     
-    myImage.inside('v /var/lib/jenkins/workspace/ev3dev-jenkins:/src'){
+    myImage.inside('-v /var/lib/jenkins/workspace/ev3dev-jenkins:/src'){
     sh "pwd"
     }
 
