@@ -1,24 +1,15 @@
-node {
-
-    checkout scm
-
-    def myImage = docker.build("ev3cc")
-    
-    def container = myImage.run()
-    
-    sh "echo ${container.id}"
-
-    sh "docker cp ${container.id}:/src/hello ."
-    
-    sh "pwd"
-    
-    
-    /*container.stop()*/
-    
-  
-
-    
-    
-
+pipeline {
+    agent none
+    stages {
+        stage('Build') {
+            agent {
+                docker {
+                    image 'ev3dev/debian-jessie-cross'
+                }
+            }
+            steps {
+                sh 'pwd'
+            }
+        }
+        }
 }
-
