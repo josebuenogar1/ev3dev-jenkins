@@ -8,7 +8,9 @@ node {
     
     sh "echo ${container.id}"
 
-    sh "docker cp ${container.id}:/src/hello prog/"
+    sh "docker cp ${container.id}:/src/hello ."
+    
+    sh "pwd"
     
     
     /*container.stop()*/
