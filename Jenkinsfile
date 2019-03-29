@@ -4,9 +4,9 @@ node {
 
     def myImage = docker.build("ev3cc")
     
-    def container = image.run()
+    def container = myImage.run()
     
-    sh "echo ${image.imageName()}"
+    sh "echo ${myImage.imageName()}"
     
     
     
