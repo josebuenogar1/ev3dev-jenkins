@@ -12,7 +12,7 @@ node {
     
     container.stop()*/
     
-    docker.image(myImage.id).withRun{
+    docker.image(myImage.id).inside{
     sh "pwd"
     }
 
