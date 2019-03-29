@@ -7,9 +7,7 @@ pipeline {
                     image 'ev3dev/debian-jessie-cross'
                 }
             }
-            steps {
-                sh 'pwd'
-            }
+
         }
         }
 }
