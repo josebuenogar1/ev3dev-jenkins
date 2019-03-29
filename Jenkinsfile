@@ -5,6 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'ev3dev/debian-jessie-cross'
+                    /*args '-v /var/lib/jenkins/workspace/pipeline-jenkinsfile:/src'*/
                 }
             }
             
