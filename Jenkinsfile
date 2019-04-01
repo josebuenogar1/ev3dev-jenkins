@@ -1,24 +1,9 @@
 node {
 
-    checkout scm
-
-    def myImage = docker.build("ev3cc")
+    docker.image('ev3dev/debian-jessie-cross').inside() { c ->
+          sh 'arm-linux-gnueabi-gcc hello.c' 
+          sh 'ls -l'
+      }
+        
     
-    def container = myImage.run()
-    
-    sh "echo ${container.id}"
-
-    sh "docker cp ${container.id}:/src/hello ."
-    
-    sh "pwd"
-    
-    
-    /*container.stop()*/
-    
-  
-
-    
-    
-
 }
-
